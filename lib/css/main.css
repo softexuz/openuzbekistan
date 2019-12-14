@@ -43,3 +43,69 @@ li {
     margin-bottom: 4px
 }
 
+.tab-content .item .key {
+    opacity: .85;
+    font-family: Conv_Montserrat-Regular;
+    font-weight: 600;
+    padding-right: 10px
+}
+
+.tab-content .item .key,
+.tab-content .item .value {
+    font-size: 14px;
+    line-height: 1.86;
+    text-align: left;
+    color: #000
+}
+
+.tab-content .item .value {
+    opacity: .9;
+    font-family: Conv_Montserrat-Light
+}
+
+.tab-content .item .color {
+    color: #1d86ff
+}
+
+.tab-content.current {
+    display: inherit;
+    fill: #6ccc62
+}
+
+.uzb_map svg path {
+    cursor: pointer
+}
+
+.uzb_map svg ellipse {
+    cursor: pointer
+}
+
+.uzb_map svg {
+    position: relative;
+    z-index: 5
+}
+
+.color {
+    fill: #ce434a; !important;
+}
+
+legend {
+    background: #35a6ff;
+    border-radius: 4px;
+    padding: 10px;
+    color: white !important;
+    margin: 0;
+    text-align: center;
+}
+
+legend h3 {
+    color:white;
+}
+
+.tooltip {
+    opacity: 1 !important;
+}
+
+.item {
+    padding: 4px 20px 4px 20px !important;
+}
