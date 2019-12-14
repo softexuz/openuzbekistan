@@ -101,7 +101,7 @@
                     <div class="indicImg transition">
                         <img src="img/indicator/unemployment.png">
                     </div>
-                    <div class="indicName"><span>Unemployment</span></div>
+                    <div class="indicName"><span>Ishsizlik</span></div>
                 </li>
                 <li id="inflation" class="indicBtn" data-link="inflation">
                     <div class="indicImg transition">
