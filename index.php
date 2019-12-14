@@ -25,6 +25,6 @@ $db = new PDO("mysql:host=".DB_['host'].";dbname=".DB_['db'], DB_['user'], DB_['
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+<!--    TODO: chart example-->
 </body>
 </html>

@@ -7,7 +7,7 @@
 
 const DB_ = [
     "host" => 'localhost',
-    "db"   => 'openuz',
+    "db"   => 'openuzbekistan',
     "user" => 'root',
     "pass" => ''
 ];
