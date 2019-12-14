@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+li {
+    list-style: none
+}
+
+
+.bcontainer {
+    width: 100%;
+    margin: 0 auto
+}
+
+
+.tab-content {
+    display: none;
+    background: #fff;
+    line-height: 1.4;
+    padding: 30px
+}
+
+.tab-content h2 {
+    opacity: .9;
+    font-family: Conv_Montserrat-Regular;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.44;
+    text-align: left;
+    color: #000;
+    margin-bottom: 50px
+}
+
+.tab-content .item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 4px
+}
+
