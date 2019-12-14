@@ -20,6 +20,11 @@ $db = new PDO("mysql:host=".DB_['host'].";dbname=".DB_['db'], DB_['user'], DB_['
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <link rel="stylesheet" href="lib/css/style.min.css">
+    <!-- For map -->
+    <script src="lib/js/jquery.js.download"></script>
+    <script src="lib/js/vendor.min.js"></script>
+    <script src="lib/js/main.js"></script>
+    <link href="lib/css/main.css" rel="stylesheet">
     
     <!--    resources-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
