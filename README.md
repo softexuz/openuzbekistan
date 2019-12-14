@@ -3,3 +3,7 @@ Libraries
 -
 - JQuery: https://jquery.com/
 - Chartjs.org: https://www.chartjs.org/
+
+Datas
+
+- https://data.gov.uz
