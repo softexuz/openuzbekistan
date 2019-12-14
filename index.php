@@ -5,9 +5,9 @@
  * Time: 12:15 PM
  */
 
-include_once("config.php");
+//include_once("config.php");
 
-$db = new PDO("mysql:host=".DB_['host'].";dbname=".DB_['db'], DB_['user'], DB_['pass']);
+//$db = new PDO("mysql:host=".DB_['host'].";dbname=".DB_['db'], DB_['user'], DB_['pass']);
 
 ?>
 <!DOCTYPE html>
@@ -20,14 +20,10 @@ $db = new PDO("mysql:host=".DB_['host'].";dbname=".DB_['db'], DB_['user'], DB_['
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="style.min.css">
     <!-- For map -->
-    <script src="lib/js/jquery.js.download"></script>
-    <script src="lib/js/vendor.min.js"></script>
-    <script src="lib/js/main.js"></script>
-    <link href="lib/css/main.css" rel="stylesheet">
-    <!--    resources-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
-
+    <script src="add/jquery.js.download"></script>
+    <script src="add/vendor.min.js"></script>
+    <script src="add/main.js"></script>
+    <link href="add/main.css" rel="stylesheet">
 </head>
 <body>
 <div id="wrapper" class="transition">
