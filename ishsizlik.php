@@ -20,56 +20,85 @@
 <body>
             <canvas id="myChart" width="400" height="400"></canvas>
             <script>
-
+                var datax = [];
+                var labelsx = [];
                 $(document).ready(function() {
-                    $.get("http://vo.id/lib/getData.php", function(data, status){
+                    $.get("/lib/getData.php", function(data, status){
                         var objData = JSON.parse(data);
+                        console.log(objData);
                         for (i in objData){
-                            for (k in objData[i]){
-                                document.write(objData[i][k]);
+                            if (objData[i].id==1){
+                                for (k in objData[i]){
+                                    console.log(objData[i][k]);
+                                    labelsx[k] = objData[i][k];
+                                }
                             }
-                            document.writeln(" --- ")
+                            if (objData[i].id==2){
+                                for (k in objData[i]){
+                                    console.log(objData[i][k]);
+                                    datax[k] = objData[i][k];
+                                }
+                            }
+
                         }
+                        createChart();
                     });
                 });
 
-                var ctx = document.getElementById('myChart');
-                var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                        datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                function createChart() {
+                    console.log(datax);
+                    console.log(labelsx);
+                    var ctx = document.getElementById('myChart');
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: [
+                                labelsx['G4'],
+                                labelsx['G5'],
+                                labelsx['G6'],
+                                labelsx['G7'],
+                                labelsx['G8'],
+                                labelsx['G9'],
+                                labelsx['G10'],
+                                labelsx['G11'],
+                                labelsx['G12'],
+                                labelsx['G13'],
+                                labelsx['G14'],
+                                labelsx['G15']
                             ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
+                            datasets: [{
+                                label: 'Ishsizlik darajasi O`zbekiston Respublikasi',
+                                data: [
+                                    datax['G4'],
+                                    datax['G5'],
+                                    datax['G6'],
+                                    datax['G7'],
+                                    datax['G8'],
+                                    datax['G9'],
+                                    datax['G10'],
+                                    datax['G11'],
+                                    datax['G12'],
+                                    datax['G13'],
+                                    datax['G14'],
+                                    datax['G15']
+                                ],
+                                backgroundColor: 'rgba',
+                                borderColor: 'blue',
+                                borderWidth: 1
                             }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
             </script>
 </body>
 </html>
