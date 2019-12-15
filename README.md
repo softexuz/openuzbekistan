@@ -3,9 +3,10 @@ Libraries
 -
 - JQuery: https://jquery.com/
 - Chartjs.org: https://www.chartjs.org/
+- Bootstrap
 
 Datas
-
+-
 - https://data.gov.uz
 
 
