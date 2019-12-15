@@ -69,7 +69,7 @@
                                 labelsx['G15']
                             ],
                             datasets: [{
-                                label: 'Ishsizlik darajasi O`zbekiston Respublikasi',
+                                label: 'Ishsizlik darajasi O`zbekiston Respublikasi (foizlarda)',
                                 data: [
                                     datax['G4'],
                                     datax['G5'],
