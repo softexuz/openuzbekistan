@@ -13,6 +13,8 @@ $array = array(
     ),
 );
 $data = file_get_contents($url, false, stream_context_create($array));
+
+
 echo $data;
 
 ?>
