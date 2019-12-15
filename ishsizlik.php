@@ -18,7 +18,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
 </head>
 <body>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <div class="chart-container" style="position: relative; height:400px; width:800px">
+                <canvas id="myChart"></canvas>
+            </div>
             <script>
                 var datax = [];
                 var labelsx = [];
@@ -50,7 +52,7 @@
                     console.log(labelsx);
                     var ctx = document.getElementById('myChart');
                     var myChart = new Chart(ctx, {
-                        type: 'line',
+                        type: 'bar',
                         data: {
                             labels: [
                                 labelsx['G4'],
@@ -82,8 +84,8 @@
                                     datax['G14'],
                                     datax['G15']
                                 ],
-                                backgroundColor: 'rgba',
-                                borderColor: 'blue',
+                                backgroundColor: 'rgba(36, 243, 133, 0.74)',
+                                borderColor: 'rgba(1, 125, 59, 0.74)',
                                 borderWidth: 1
                             }]
                         },
