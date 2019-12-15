@@ -7,7 +7,7 @@
 
 ?>
 
-<div id="introChoice">Statistik ma'lumot 2019</div>
+<div id="introChoice"></div>
 <div id="indicWrap">
     <ul>
         <li id="unemployment" class="indicBtn" data-link="unemployment">
