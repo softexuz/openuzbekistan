@@ -132,10 +132,10 @@
 
         }
         console.log(dataBugdoy);
-        createChart("line", ctxBugdoy,  labels, "Navoiy" , dataBugdoy , 'rgba(36, 243, 133, 0.74)');
-        createChart("line", ctxGuruch,  labels, "Navoiy" , dataGuruch , 'rgba(36, 243, 133, 0.74)');
-        createChart("line", ctxGusht,   labels, "Navoiy" , dataGusht , 'rgba(36, 243, 133, 0.74)');
-        createChart("line", ctxLavlagi, labels, "Navoiy" , dataLavlagi , 'rgba(36, 243, 133, 0.74)');
+        createChart("line", ctxBugdoy,  labels, "Navoiy" , dataBugdoy , '#0d78f2');
+        createChart("line", ctxGuruch,  labels, "Navoiy" , dataGuruch , '#0d78f2');
+        createChart("line", ctxGusht,   labels, "Navoiy" , dataGusht , '#0d78f2');
+        createChart("line", ctxLavlagi, labels, "Navoiy" , dataLavlagi , '#0d78f2');
     });
 
     function createChart(type, ctx, labels, label, data, color) {
@@ -146,7 +146,8 @@
                 datasets: [{
                     label: label,
                     data: data,
-                    borderColor: 'rgba(36, 243, 133, 0.74)',
+                    fill: false,
+                    borderColor: color,
                     borderWidth: 1
                 }]
             },
