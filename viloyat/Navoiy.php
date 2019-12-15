@@ -7,7 +7,9 @@
 
 ?>
 
-<h1 style="display: block; margin: 20px 10px 10px 60px; font-size: 24px; text-align: center"> Navoiy viloyati</h1>
+<h1 style="display: block; margin: 20px 10px 10px 60px; font-size: 24px; text-align: center">
+    2019 yilda Navoiy viloyati bo`yicha dehqon bozorlaridagi ayrim tovarlarning o`rtacha narxlari* (1 kg. so'mda)
+</h1>
 
 <!--<table class="table table-striped table-dark" style="-->
 <!--        width: 1000px;-->
@@ -79,16 +81,19 @@
     var dataGuruch = [];
     var dataLavlagi = [];
 
+    var dataBugdoyToshkent = [];
+    var dataGushtToshkent = [];
+    var dataGuruchToshkent = [];
+    var dataLavlagiToshkent = [];
+
     var labels = ['yanvar','fevral','mart','aprel','may','iyun','iyul','avgust','sentabr','oktabr'];
 
-    $.get("/lib/getNavoiy.php", function(data, status){
+    $.get("/lib/getNavoiy.php", function(data, status){ //Navoiy
         var objData = JSON.parse(data);
-        console.log(objData);
         for (i in objData){
             if (objData[i].id==1){ //bugdoy
                 GG = true;
                 for (k in objData[i]){
-                    console.log(objData[i][k]);
                     if (k != 'G4' && GG){
                         continue;
                     }
@@ -99,7 +104,6 @@
             if (objData[i].id==9){ //guruch
                 GG = true;
                 for (k in objData[i]){
-                    console.log(objData[i][k]);
                     if (k != 'G4' && GG){
                         continue;
                     }
@@ -110,7 +114,6 @@
             if (objData[i].id==49){ //gusht
                 GG = true;
                 for (k in objData[i]){
-                    console.log(objData[i][k]);
                     if (k != 'G4' && GG){
                         continue;
                     }
@@ -121,7 +124,6 @@
             if (objData[i].id==20){ //lavlagi
                 GG = true;
                 for (k in objData[i]){
-                    console.log(objData[i][k]);
                     if (k != 'G4' && GG){
                         continue;
                     }
@@ -129,26 +131,75 @@
                     dataLavlagi.push(parseInt(objData[i][k]));
                 }
             }
-
         }
-        console.log(dataBugdoy);
-        createChart("line", ctxBugdoy,  labels, "Navoiy" , dataBugdoy , '#0d78f2');
-        createChart("line", ctxGuruch,  labels, "Navoiy" , dataGuruch , '#0d78f2');
-        createChart("line", ctxGusht,   labels, "Navoiy" , dataGusht , '#0d78f2');
-        createChart("line", ctxLavlagi, labels, "Navoiy" , dataLavlagi , '#0d78f2');
+        $.get("/lib/getToshkent.php", function(datax, status){ //Toshkent
+            var objDataToshkent = JSON.parse(datax);
+            for (i in objDataToshkent){
+                if (objDataToshkent[i].id==2){ //bugdoy Toshkent
+                    GG = true;
+                    for (k in objDataToshkent[i]){
+                        if (k != 'G4' && GG){
+                            continue;
+                        }
+                        GG = false;
+                        dataBugdoyToshkent.push(parseInt(objDataToshkent[i][k]));
+                    }
+                }
+                if (objDataToshkent[i].id==10){ //guruch Toshkent
+                    GG = true;
+                    for (k in objDataToshkent[i]){
+                        if (k != 'G4' && GG){
+                            continue;
+                        }
+                        GG = false;
+                        dataGuruchToshkent.push(parseInt(objDataToshkent[i][k]));
+                    }
+                }
+                if (objDataToshkent[i].id==50){ //gusht Toshkent
+                    GG = true;
+                    for (k in objDataToshkent[i]){
+                        if (k != 'G4' && GG){
+                            continue;
+                        }
+                        GG = false;
+                        dataGushtToshkent.push(parseInt(objDataToshkent[i][k]));
+                    }
+                }
+                if (objDataToshkent[i].id==21){ //lavlagi Toshkent
+                    GG = true;
+                    for (k in objDataToshkent[i]){
+                        if (k != 'G4' && GG){
+                            continue;
+                        }
+                        GG = false;
+                        dataLavlagiToshkent.push(parseInt(objDataToshkent[i][k]));
+                    }
+                }
+            }
+            createChart("line", ctxBugdoy,  labels, {0:"Navoiy",1:"Toshkent"} , {0:dataBugdoy, 1:dataBugdoyToshkent});
+            createChart("line", ctxGuruch,  labels, {0:"Navoiy",1:"Toshkent"} , {0:dataGuruch, 1:dataGuruchToshkent});
+            createChart("line", ctxGusht,   labels, {0:"Navoiy",1:"Toshkent"} , {0:dataGusht,  1:dataGushtToshkent});
+            createChart("line", ctxLavlagi, labels, {0:"Navoiy",1:"Toshkent"} , {0:dataLavlagi,1:dataLavlagiToshkent});
+        });
     });
 
-    function createChart(type, ctx, labels, label, data, color) {
+    function createChart(type, ctx, labels, label, data) {
          new Chart(ctx, {
             type: type,
             data: {
                 labels: labels,
                 datasets: [{
-                    label: label,
-                    data: data,
+                    label: label[0],
+                    data: data[0],
                     fill: false,
-                    borderColor: color,
-                    borderWidth: 1
+                    borderColor: '#0d78f2',
+                    borderWidth: 2
+                },{
+                    label: label[1],
+                    data: data[1],
+                    fill: false,
+                    borderColor: '#f24652',
+                    borderWidth: 2
                 }]
             },
             options: {
@@ -157,72 +208,6 @@
                         fontColor: '#323232'
                     }
                 }
-
-            }
-        });
-        ctx.style.backgroundColor = 'rgba(255, 255, 255, 0.88)';
-    }
-
-
-
-
-    function createChartx() {
-        console.log(datax);
-        console.log(labelsx);
-        var ctx = document.getElementById('myChart');
-
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: [
-                    labelsx['G4'],
-                    labelsx['G5'],
-                    labelsx['G6'],
-                    labelsx['G7'],
-                    labelsx['G8'],
-                    labelsx['G9'],
-                    labelsx['G10'],
-                    labelsx['G11'],
-                    labelsx['G12'],
-                    labelsx['G13'],
-                    labelsx['G14'],
-                    labelsx['G15']
-                ],
-                datasets: [{
-                    label: 'Navoiy',
-                    data: [
-                        datax['G4'],
-                        datax['G5'],
-                        datax['G6'],
-                        datax['G7'],
-                        datax['G8'],
-                        datax['G9'],
-                        datax['G10'],
-                        datax['G11'],
-                        datax['G12'],
-                        datax['G13'],
-                        datax['G14'],
-                        datax['G15']
-                    ],
-                    backgroundColor: 'rgba(36, 243, 133, 0.74)',
-                    borderColor: 'rgba(1, 125, 59, 0.74)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
-                legend: {
-                    labels: {
-                        fontColor: '#323232'
-                    }
-                }
-
             }
         });
         ctx.style.backgroundColor = 'rgba(255, 255, 255, 0.88)';
