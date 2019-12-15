@@ -5,7 +5,7 @@
  * Time: 12:32 PM
  */
 
-$url ='http://data.gov.uz/uz/api/v1/json/dataset/9722/version/22509?access_key=d577aa4f53c820c462eccf47c2d737e2';
+$url ='http://data.gov.uz/ru/api/v1/json/dataset/9710/version/22495?access_key=d577aa4f53c820c462eccf47c2d737e2';
 $array = array(
     "ssl"=>array(
         "verify_peer"=>false,
