@@ -76,6 +76,56 @@
                                 </g>
                             </svg>
                         </figure>
+                        <div class="container">
+                            <div class="row">
+ <div class="col-md-6" style="
+    float: left;
+    margin-top: -106px;
+    margin-right: -3px;
+    margin-left: 160px;
+    border: 1px solid white;
+    border-radius: 35px;
+    width: 256px;
+    height: 72px;
+    background-color: white;
+">
+    <h1 style="
+    color: black;
+    margin-top: 6px;
+    font-size: 18px;
+">Doimiy aholi soni</h1>
+                                    <h1 style="
+    font-size: 37px;
+    margin-top: -2px;
+    color: black;
+    ">33 796 000</h1>
+                                </div>
+                               <div class="col-md-6" style="
+    margin-right: 143px;
+    margin-top: -106px;
+    float: right;
+    border: 1px solid white;
+    border-radius: 2px;
+    width: 256px;
+    height: 67px;
+    background-color: white;
+    border-radius: 34px;
+">
+                                    <h1 style="
+    font-size: 18px;
+    margin-top: 7px;
+    color: black;
+">Biznes qilish indeksi</h1><br>
+<h1 style="
+    font-size: 34px;
+    margin-top: -16px;
+    color: black;
+">69</h1>
+
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
 
 
