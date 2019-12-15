@@ -10,11 +10,13 @@
 <div id="introChoice">Statistik ma'lumot 2019</div>
 <div id="indicWrap">
     <ul>
-        <li id="unemployment" class="indicBtn" data-link="unemployment" onclick="alert('Клик!')">
-            <div class="indicImg transition">
-                <img src="img/indicator/unemployment.png">
-            </div>
-            <div class="indicName"><span>Unemployment</span></div>
+        <li id="unemployment" class="indicBtn" data-link="unemployment">
+            <a href="/unemployment.php">
+                <div class="indicImg transition">
+                    <img src="img/indicator/unemployment.png">
+                </div>
+                <div class="indicName"><span>Unemployment</span></div>
+            </a>
         </li>
         <li id="inflation" class="indicBtn" data-link="inflation">
             <div class="indicImg transition">
