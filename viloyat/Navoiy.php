@@ -7,9 +7,7 @@
 
 ?>
 
-<h1 style="display: block; margin: 20px 10px 10px 60px; font-size: 24px; text-align: center">
-    2019 yilda Navoiy viloyati bo`yicha dehqon bozorlaridagi ayrim tovarlarning o`rtacha narxlari* (1 kg. so'mda)
-</h1>
+
 
 <!--<table class="table table-striped table-dark" style="-->
 <!--        width: 1000px;-->
@@ -33,7 +31,12 @@
 <!--    </tbody>-->
 <!--</table>-->
 
-<div class="row" style="text-align: center">
+
+<h1 style="display: block; margin: 20px 10px 10px 60px; font-size: 24px; text-align: center">
+    2019 yilda Navoiy viloyati bo`yicha dehqon bozorlaridagi ayrim tovarlarning o`rtacha narxlari* (1 kg. so'mda)
+</h1>
+
+<div class="row" id="rowCharts" style="text-align: center">
     <div class="col-3">
         <div class="list-group" id="list-tab" role="tablist">
             <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Bug`doy</a>
@@ -198,6 +201,7 @@
                     label: label[1],
                     data: data[1],
                     fill: false,
+                    hidden: true,
                     borderColor: '#f24652',
                     borderWidth: 2
                 }]
@@ -207,10 +211,18 @@
                     labels: {
                         fontColor: '#323232'
                     }
+                },
+                tooltips: {
+                    mode: 'nearest'
                 }
             }
         });
         ctx.style.backgroundColor = 'rgba(255, 255, 255, 0.88)';
     }
+
+</script>
+
+<!--hide-show charts-->
+<script>
 
 </script>
