@@ -145,9 +145,8 @@
 
 <!--        Bottom menu-->
         <?php include_once ("lib/bottomMenu.php");?>
-        <div id="logo" class="transition">
-            <a href="index.html" title="" style="background: url(&quot;img/logoDesktop.png&quot;) left top / 190px 55px no-repeat;"></a>
-        </div>
+        <?php include_once ("lib/logo.php");?>
+      
     </div>
 </div>
 </body>
